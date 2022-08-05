@@ -67,6 +67,12 @@ module.exports = {
         gred01: `linear-gradient(180deg, rgba(29, 29, 29, 0.38) 0%, rgba(29, 29, 29, 0.42) 0.01%, rgba(29, 29, 29, 0.76) 45.31%, rgba(29, 29, 29, 0.76) 100%);`,
 
       }),
+      boxShadow: {
+        //Shadows using dark color
+        card: '0 9px 16px 0 rgba(41, 38, 50, 0.06)',
+        popup: '0px 10px 66px 0 rgba(41, 38, 50, 0.1)',
+        none: 'none',
+      },
     },
   },
   plugins: [

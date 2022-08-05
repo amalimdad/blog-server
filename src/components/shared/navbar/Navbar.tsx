@@ -6,14 +6,20 @@ import { FaSistrix, FaRegMoon } from 'react-icons/fa';
 
 export const Navbar = ({
   logoInfo,
-  isDarkMode,
+
   menuItems
 }: NavbarInterface) => {
+
+  const [isDarkMode, setDarkMode] = useState(true);
 
   if (!menuItems) {
     menuItems = [
       messages.ar.menuItems.home, messages.ar.menuItems.reports, messages.ar.menuItems.assay
     ]
+  }
+
+  const onModeChanged = () => {
+    setDarkMode(!isDarkMode)
   }
   let logo;
   if (logoInfo?.url) {
@@ -24,17 +30,18 @@ export const Navbar = ({
 
   return (
     <>
-      <div className={cn('flex justify-between min-h-20 sticky top-0 z-50 w-screen items-center px-5 md:px-20 lg:px-60 py-10 ', { 'bg-black': isDarkMode })} >
-        <div className='text-white'>
+      <div className={cn('flex justify-between min-h-20 sticky top-0 z-50 w-screen items-center px-5 md:px-20 lg:px-60 py-10 ', { 'bg-black': isDarkMode, 'shadow-popup': !isDarkMode })} >
+        <div className={isDarkMode ? 'text-white' : "text-black"}>
           {logo}
           {
             menuItems.map((item, index) => <span className='px-10 ' key={index}>{item}</span>)
           }
         </div>
-        <div className='flex'>
-          <button className='text-white border-solid border-white border-full p-4 me-10'>
+        <div className={cn('flex', { 'text-white': isDarkMode, 'text-black': !isDarkMode })} >
+          <button className=' border-solid border-white border-full p-4 me-10'>
             <FaSistrix /></button>
-          <button className='text-white border-solid border-white border-full p-4'>
+          <button className='border-solid border-white border-full p-4'
+            onClick={onModeChanged}>
             <FaRegMoon /></button>
         </div>
       </div>
