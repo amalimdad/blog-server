@@ -65,13 +65,14 @@ export const Home = () => {
             </span>
           </span>
         </div>
-        <div className='grid grid-cols-3 gap-7 md:gap-12 lg:gap-18 space-y-10 lg:space-y-0'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-12 lg:gap-18 space-y-10 lg:space-y-0'>
           {
             sliders.map((item, i) =>
               <ImageWithText imageUrl={item.img_url} contentPosition={'bottom'} key={i}>
-                <h3 className="leading-loose text-lg mb-8">{item.title}</h3>
+                {/* <h3 className="leading-loose text-lg mb-8">{item.title}</h3>
                 <p className="mb-8">{item.description}</p>
-                <p className="">{item.author}</p>
+                <p className="">{item.author}</p> */}
+                <CardDetails data={item} theme="light" hideSubtitle='true' />
               </ImageWithText>)
           }
         </div>
@@ -94,20 +95,16 @@ export const Home = () => {
         <HorizLine />
 
         {/* Third section */}
-        <div>
+        <div className=''>
           <ImageWithText imageUrl={blogs[0].img_url} key={blogs[0].title}>
             <CardDetails data={blogs[0]} key={blogs[0].title} size="lg" theme="light" />
-
-            {/* <h3 className="leading-loose text-lg mb-8 text-center">{blogs[0].title}</h3>
-            <p className="mb-8 text-center">{blogs[0].description}</p>
-            <p className="text-center">{blogs[0].author}</p> */}
           </ImageWithText>
         </div>
 
         {/* Fourth section */}
         <div className='flex justify-between'>
           <div className='text-black600 space-x-20'>
-            <button className='active me-20'> {messages.ar.mostWatching}</button>
+            <button className='active me-10 md:me-20'> {messages.ar.mostWatching}</button>
             <button> {messages.ar.mostPopular}</button>
             <button> {messages.ar.mostReading}</button>
           </div>
@@ -142,10 +139,11 @@ export const Home = () => {
               </>)
             }
           </div>
-
-          <ImageWithText imageUrl={blogs[1].img_url} contentPosition="bottom" key={blogs[1].title} customClasses="order-first lg:order-last" >
-            <CardDetails data={blogs[1]} key={blogs[1].title} size="lg" theme="light" />
-          </ImageWithText>
+          <div className='items-start'>
+            <ImageWithText imageUrl={blogs[0].img_url} contentPosition="bottom" key={blogs[0].title} customClasses="order-first lg:order-last" >
+              <CardDetails data={blogs[0]} key={blogs[0].title} size="lg" theme="light" />
+            </ImageWithText>
+          </div>
         </div>
 
       </div>
