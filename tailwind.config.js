@@ -10,10 +10,11 @@ module.exports = {
       black900: '#202221',
       black800: "#404343",
       black600: "#808686",
-      black100: "#ECEEED",
+      grayNeutrals100: "#ECEEED",
       tiffany: "#5DD5C4",
       orang: "#FF9F4B",
-      gray50: "#F7F7F7"
+      grayNeutrals50: "#F7F7F7",
+      "gray-light25": "#FAFAFA"
     },
     spacing: {
       0: '0px',
@@ -71,8 +72,15 @@ module.exports = {
         //Shadows using dark color
         card: '0 9px 16px 0 rgba(41, 38, 50, 0.06)',
         popup: '0px 10px 66px 0 rgba(41, 38, 50, 0.1)',
+        soft: '0px 2px 4px 0px rgba(47, 127, 115, 0.03)',
         none: 'none',
       },
+      zIndex: {
+        '1000': '1000',
+      },
+      fontSize: {
+        "text-4xl2": '2.5rem'
+      }
     },
   },
   plugins: [

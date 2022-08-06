@@ -14,9 +14,12 @@ function App() {
 
 
   return (
-    <div className="App" dir='rtl'>
+    <main dir='rtl'>
       <Navbar logoInfo={logoInfo} menuItems={items} />
-      <Home />
+      <aside className="min-h-screen">
+        <Home />
+      </aside>
+
       {/* <header className="App-header">
         <h1 className="text-3xl font-bold underline text-black600">
           Hello world!
@@ -24,7 +27,7 @@ function App() {
 
       </header> */}
       <Footer />
-    </div>
+    </main>
   );
 }
 

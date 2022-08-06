@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import messages from "../../../assets/local/messages"
 import cn from 'classnames';
-import { FaSistrix, FaRegMoon } from 'react-icons/fa';
+import { FaSistrix, FaRegMoon, FaBars } from 'react-icons/fa';
+import Button from '../button/Button';
 
 export const Navbar = ({
   logoInfo,
@@ -30,19 +31,32 @@ export const Navbar = ({
 
   return (
     <>
-      <div className={cn('flex justify-between min-h-20 sticky top-0 z-50 w-screen items-center px-5 md:px-20 lg:px-60 py-10 ', { 'bg-black': isDarkMode, 'shadow-popup': !isDarkMode })} >
+      <div className={cn('flex justify-between min-h-20 sticky top-0 z-1000 w-screen items-center px-5 md:px-20 lg:px-60 py-10 ', { 'bg-black': isDarkMode, 'shadow-popup bg-white': !isDarkMode })} >
         <div className={isDarkMode ? 'text-white' : "text-black"}>
+          {/* <div className='inline-flex'>
+            <Button textColor={isDarkMode ? 'text-white' : 'text-black'} borderStyle='none' bgColor="transparent"
+              shape="full-sm" extraClasses="md:hidden me-10" onClick={onModeChanged}>
+              <FaBars />
+            </Button>
+
+            {logo}
+          </div> */}
           {logo}
           {
-            menuItems.map((item, index) => <span className='px-10 ' key={index}>{item}</span>)
+            menuItems.map((item, index) => <span className='px-10 hidden md:inline' key={index}>{item}</span>)
           }
         </div>
         <div className={cn('flex', { 'text-white': isDarkMode, 'text-black': !isDarkMode })} >
-          <button className=' border-solid border-white border-full p-4 me-10'>
-            <FaSistrix /></button>
-          <button className='border-solid border-white border-full p-4'
-            onClick={onModeChanged}>
-            <FaRegMoon /></button>
+          <Button textColor="white" borderColor={isDarkMode ? "gray-light" : "black"} bgColor="transparent" extraClasses="me-10"
+            shape="full-sm">
+            <FaSistrix />
+          </Button>
+
+          <Button textColor="white" borderColor={isDarkMode ? "gray-light" : "black"} bgColor="transparent"
+            shape="full-sm" extraClasses="me-10" onClick={onModeChanged}>
+            <FaRegMoon />
+          </Button>
+
         </div>
       </div>
 

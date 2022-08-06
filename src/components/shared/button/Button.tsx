@@ -4,60 +4,67 @@ import cn from 'classnames';
 
 const Button = React.forwardRef(({ children, ...props }: any, ref: any) => {
   let {
-    customClassName,
+    extraClasses,
     textColor,
     bgColor,
     btnSize,
     borderColor,
     borderStyle,
-    href,
     onClick,
-    externalLink,
-    rounded
+    shape
   } = props;
+  console.log(btnSize, shape, !btnSize && !shape);
+
   return (
     <>
-      <a
+      <button
         onClick={onClick}
-        href={`${href ? href : ''}`}
         ref={ref}
-        target={externalLink && '_blank'}
         className={cn(
           'flex items-center justify-center',
-          'global-btn inline-block text-center hover:shadow-btn transform hover:-translate-y-.5 transition-all duration-200 ',
+          'inline-block text-center hover:shadow-popup transform transition-all duration-200 ',
           {
             // border
-            'border-none': !borderStyle,
-            'border border-solid': borderStyle === 'solid',
-            'border-': borderColor === 'blue',
-            'border-c200': borderColor === 'green',
-            'border-black900': borderColor === 'black',
+            'border-none': !borderColor || borderStyle === 'none',
+            'border border-solid border-black ': borderStyle === 'solid',
+            'border border-solid border-tiffany': borderColor === 'tiffany',
+            'border border-solid border-black600': borderColor === 'gray',
+            'border border-solid border-orang': borderColor === 'orang',
+            'border border-solid border-grayNeutrals100': borderColor === 'gray-light',
+            'border border-solid border-black': borderColor === 'black',
 
             // colors
-            'text-black900': !textColor,
-            'text-white': bgColor === 'primary',
-            'text-c800': textColor === 'gray',
-            'text-c200': textColor === 'green',
+            'text-black900': !textColor && !bgColor,
+            'text-tiffany': textColor === 'tiffany',
+            'text-black600': textColor === 'gray',
+            'text-orang': textColor === 'orang',
 
             //bg Color
-            'bg-c000': !bgColor,
-            'bg-black': bgColor === 'black',
-            'bg-tiffany': bgColor === 'primary',
-            'bg-orang': bgColor === 'secondary',
-            //spacing
-            ' w-48 h-20': !btnSize,
-            ' w-32 h-16': btnSize === 'small',
-            ' w-32 sm:w-64 h-16': btnSize === 'medium',
-            ' w-64 sm:w-72 h-16': btnSize === 'large',
-            ' w-64 sm:w-72 h-20': btnSize === 'largeTall',
+            'bg-white': !bgColor && !textColor,
+            ' text-white': bgColor === 'white',
+            'bg-black text-white': bgColor === 'black',
+            'bg-tiffany text-white': bgColor === 'tiffany',
+            'bg-orang text-white': bgColor === 'orang',
+            'bg-transparent': bgColor === 'transparent',
+            'bg-grayNeutrals100 ': bgColor === 'gray-light',
+            'bg-gray-light25': bgColor === 'gray-lighter',
 
+            // //spacing
+            // ' w-48 h-20': !btnSize && !shape,
+            // ' w-32 h-16': btnSize === 'sm',
+            // ' w-32 sm:w-64 h-16': btnSize === 'md',
+            // ' w-64 sm:w-72 h-16': btnSize === 'lg',
 
+            // shape
+            'rounded': !shape,
+            'w-24 h-24 rounded-full': shape === 'full-sm',
+            'w-32 h-32 rounded-full': shape === 'full-md'
           },
-          customClassName
+          extraClasses
         )}
       >
         {children}
-      </a>
+      </button>
     </>
   );
 });
@@ -65,14 +72,14 @@ const Button = React.forwardRef(({ children, ...props }: any, ref: any) => {
 export default Button;
 
 interface ButtonProps {
-  customClassName: string,
-  textColor: '',
-  bgColor: "transparent" | "black" | "primary" | "secondary",
-  btnSize: 'sma' | 'md',
-  borderColor: string,
-  borderStyle: string,
+  extraClasses: string,
+  textColor: 'tiffany' | 'gray' | 'orang' | 'white',
+  bgColor: "transparent" | "black" | "tiffany" | "orang" | 'gray-light' | "gray-lighter",
+  btnSize: 'sm' | 'md' | 'lg',
+  shape: "full-sm" | "full-md";
+  borderColor: 'tiffany' | 'gray' | 'orang' | 'gray-light' | 'black',
+  borderStyle: 'solid' | 'none',
   href: string,
   onClick: () => void,
   externalLink: string,
-  rounded: 'full' | "md"
 }

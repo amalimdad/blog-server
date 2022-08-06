@@ -1,4 +1,5 @@
-export default {
+const Local =
+{
   en: {
     appName: "Blog",
     menuItems: {
@@ -8,13 +9,25 @@ export default {
     },
     termAndConditions: "الشروط والأحكام",
     copyRight: "االحقوق محفوظة",
-    langBtn: "عربى",
-    home: {
-      content:
-        "What is Lorem Ipsum?Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    readMore: "Read more",
+    mostReading: "Most Reading",
+    mostPopular: "Most Popular",
+    mostWatching: "Most Watching",
+    by: "by",
+    registerInNewsLetter: "Register in News Letter",
+    registerInNewsLetterSubtitle: "ةينورتكلإلا ةراجتلا ملاع يف ديدج لك نع ملعي نم لوأ نك و",
+    actions: {
+      register: "Register",
+      beWriter: "Be witter with us",
+      addComment: "Add comment"
     },
-    snackbar: {
-      'success': 'Done successfully'
-    }
+    email: "email",
+    name: "name",
+    emailPlaceholder: "Please enter your email",
+    namePlaceholder: "Please enter your name",
+    beFirstCommenter: "be the first commenter",
+    langBtn: "عربى",
   }
 }
+
+export default Local;
