@@ -4,30 +4,25 @@ import messages from "../../../assets/local/messages"
 import cn from 'classnames';
 import { FaSistrix, FaRegMoon, FaBars } from 'react-icons/fa';
 import Button from '../button/Button';
+import { Link } from 'react-router-dom'
 
-export const Navbar = ({
-  logoInfo,
-
-  menuItems
-}: NavbarInterface) => {
+export const Navbar = ({ menuItems }: { menuItems?: { name: string, url: string }[]; }) => {
 
   const [isDarkMode, setDarkMode] = useState(true);
+  let logo;
+  let logoInfo: { name_ar: string, name_en: string, url?: string } = { name_ar: messages.ar.appName, name_en: messages.en.appName }
 
   if (!menuItems) {
     menuItems = [
-      messages.ar.menuItems.home, messages.ar.menuItems.reports, messages.ar.menuItems.assay
+      { name: messages.ar.menuItems.home, url: '/' }, { name: messages.ar.menuItems.reports, url: '/report' }, { name: messages.ar.menuItems.assay, url: '/' }
     ]
   }
-
-  const onModeChanged = () => {
-    setDarkMode(!isDarkMode)
-  }
-  let logo;
   if (logoInfo?.url) {
     logo = <img src={logoInfo.url} alt={logoInfo.name_ar} height="70px" className='pe-40' />;
   } else {
     logo = <span className='pe-40 text-2xl'>{logoInfo?.name_ar} | {logoInfo?.name_en}</span>;
   }
+
 
   return (
     <>
@@ -43,7 +38,7 @@ export const Navbar = ({
           </div> */}
           {logo}
           {
-            menuItems.map((item, index) => <span className='px-10 hidden md:inline' key={index}>{item}</span>)
+            menuItems.map((item, index) => <Link to={item.url} key={index} className='px-10 hidden md:inline'> {item.name} </Link>)
           }
         </div>
         <div className={cn('flex', { 'text-white': isDarkMode, 'text-black': !isDarkMode })} >
@@ -53,7 +48,9 @@ export const Navbar = ({
           </Button>
 
           <Button textColor="white" borderColor={isDarkMode ? "gray-light" : "black"} bgColor="transparent"
-            shape="full-sm" extraClasses="me-10" onClick={onModeChanged}>
+            shape="full-sm" extraClasses="me-10" onClick={() => {
+              setDarkMode(!isDarkMode)
+            }}>
             <FaRegMoon />
           </Button>
 
@@ -66,9 +63,3 @@ export const Navbar = ({
 
 export default Navbar;
 
-
-interface NavbarInterface {
-  logoInfo: { name_ar: string, name_en: string, url?: string };
-  isDarkMode?: boolean;
-  menuItems?: string[];
-}

@@ -26,6 +26,8 @@ const Local = {
     emailPlaceholder: "الرجاء ادخال اسمك",
     namePlaceholder: "الرجاء ادخال البريد الالمتروني",
     beFirstCommenter: "كن اول من يكتب التعليق",
+    langBtn: "en",
+
   }
 };
 export default Local;

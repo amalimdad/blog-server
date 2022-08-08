@@ -26,7 +26,7 @@ const Local =
     emailPlaceholder: "Please enter your email",
     namePlaceholder: "Please enter your name",
     beFirstCommenter: "be the first commenter",
-    langBtn: "عربى",
+    langBtn: "ع",
   }
 }
 
