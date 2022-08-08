@@ -1,9 +1,9 @@
 
 import React from 'react';
 import messages from '../../../assets/local/messages';
-import { FaSistrix, FaRegMoon, FaChevronRight } from 'react-icons/fa';
 import Newsletter from "../newsletter/Newsletter"
 import Button from '../button/Button';
+import { FaChevronRight } from 'react-icons/fa';
 export const Footer = () => {
 
   return (
@@ -35,7 +35,7 @@ export const Footer = () => {
 
             <div className="border-s border-black800 "></div>
 
-            <Button bgColor="orang" extraClasses="me-4 px-10 py-5">
+            <Button bgColor="orang" shape="rounded" extraClasses="me-4 px-10 py-5">
               {messages.ar.beFirstCommenter}
             </Button>
           </div>

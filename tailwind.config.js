@@ -10,10 +10,10 @@ module.exports = {
       black900: '#202221',
       black800: "#404343",
       black600: "#808686",
-      grayNeutrals100: "#ECEEED",
+      gray100: "#ECEEED",
       tiffany: "#5DD5C4",
       orang: "#FF9F4B",
-      grayNeutrals50: "#F7F7F7",
+      gray50: "#F7F7F7",
       "gray-light25": "#FAFAFA"
     },
     spacing: {
@@ -59,6 +59,7 @@ module.exports = {
       250: '25rem',
       300: '30rem',
       400: '40rem',
+      500: '50rem',
       700: '70rem',
       '90-screen': '90vh',
       '70-screen': '70vh',
@@ -80,10 +81,21 @@ module.exports = {
       },
       fontSize: {
         "text-4xl2": '2.5rem'
-      }
+      },
+      maxHeight: {
+        100: '10rem',
+        200: '20rem',
+        300: '30rem',
+        500: '50rem',
+      },
+      minHeight: {
+        32: '3.2rem'
+      },
+
     },
   },
   plugins: [
     require('tailwindcss-rtl'),
+    require('@tailwindcss/line-clamp'),
   ],
 }

@@ -2,8 +2,9 @@
 
 import React from 'react';
 import messages from '../../assets/local/messages';
-import "./slider.scss"
+import "./Slider.scss"
 
+import cn from "classnames"
 const Slider = ({ items }: any) => {
 
   return (
