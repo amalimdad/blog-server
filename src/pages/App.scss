@@ -1,0 +1,29 @@
+@import '../assets/scss/style.scss';
+
+h1 {
+  @apply text-5xl;
+}
+
+h4 {
+  @apply text-2xl;
+}
+
+@media screen and (max-width: 1023px) {
+  h1 {
+    @apply text-4xl;
+  }
+
+  h4 {
+    @apply text-xl;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    @apply text-3xl;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+}

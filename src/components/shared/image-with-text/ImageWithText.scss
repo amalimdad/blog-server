@@ -1,0 +1,20 @@
+.content {
+  @apply relative max-w-full m-auto overflow-hidden rounded;
+}
+
+.content-overlay {
+  @apply absolute bg-gred01 h-full w-full left-0 top-0 bottom-0 right-0 opacity-100;
+}
+
+.content-details {
+  @apply absolute w-full text-white text-base opacity-100 px-12 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+}
+
+.middle-details {
+  @apply top-1/2;
+}
+
+.bottom-details {
+  @apply top-2/3;
+
+}
