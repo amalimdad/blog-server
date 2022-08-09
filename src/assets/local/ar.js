@@ -14,6 +14,7 @@ const Local = {
     mostPopular: "الأكثر شهرة",
     mostWatching: "الأكثر مشاهدة",
     by: "بواسطة",
+    since: "منذ",
     registerInNewsLetter: "اشتراك في النشرة البريدية",
     registerInNewsLetterSubtitle: "وكن اول من يعلم عن كل جديد في عالم التجارة الالكترونية",
     actions: {
@@ -27,7 +28,14 @@ const Local = {
     namePlaceholder: "الرجاء ادخال البريد الالمتروني",
     beFirstCommenter: "كن اول من يكتب التعليق",
     langBtn: "en",
-
+    pageNotFound: "لم يتم العثور على الصفحة",
+    emptyState: "اوتشش! لايوجد بيانات ",
+    reports: {
+      "reportsAndStudies": "التقارير والدراسات"
+    },
+    essays: {
+      "essays": "المقالات"
+    }
   }
 };
 export default Local;

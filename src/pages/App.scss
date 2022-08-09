@@ -1,33 +1,29 @@
-// .App-logo {
-//   height: 40vmin;
-//   pointer-events: none;
-// }
+@import '../assets/scss/style.scss';
 
-// @media (prefers-reduced-motion: no-preference) {
-//   .App-logo {
-//     animation: App-logo-spin infinite 20s linear;
-//   }
-// }
+h1 {
+  @apply text-5xl;
+}
 
-// .App-header {
+h4 {
+  @apply text-2xl;
+}
 
-//   min-height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: calc(10px + 2vmin);
-//   color: black;
-// }
+@media screen and (max-width: 1023px) {
+  h1 {
+    @apply text-4xl;
+  }
 
+  h4 {
+    @apply text-xl;
+  }
+}
 
+@media screen and (max-width: 767px) {
+  h1 {
+    @apply text-3xl;
+  }
 
-// @keyframes App-logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
+  h4 {
+    @apply text-lg;
+  }
+}

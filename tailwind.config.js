@@ -90,8 +90,7 @@ module.exports = {
       },
       minHeight: {
         32: '3.2rem'
-      },
-
+      }
     },
   },
   plugins: [

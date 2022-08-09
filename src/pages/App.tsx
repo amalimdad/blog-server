@@ -1,22 +1,15 @@
 import { createContext } from 'react';
-import logo from './assets/images/logo.svg';
 import './App.scss';
-import Navbar from "../components/shared/navbar/Navbar";
-import messages from "../assets/local/messages"
-import Footer from '../components/shared/footer/Footer';
 import Home from '../pages/home/Home';
 import Reports from '../pages/reports/Reports';
-
-import Slider from '../components/slider/Slider';
 import { BrowserRouter, Route, Routes, } from 'react-router-dom';
 import React from 'react';
 import PageNotFound from './page-404/PageNotFound';
 import Layout from './layout/Layout';
+import ViewReport from './reports/view/viewReport';
+import Essays from './essays/Essays';
 
 function App() {
-
-
-
   const LangContext = createContext(localStorage.getItem('lang') ?? 'ar')
 
   return (
@@ -26,6 +19,9 @@ function App() {
           <Routes>
             <Route path='/' element={<Layout />} >
               <Route index element={<Home />} />
+              <Route path='/reports' element={<Reports />} />
+              <Route path="/reports/:id" element={<ViewReport />} />
+              <Route path='/essays' element={<Essays />} />
               <Route path="*" element={< PageNotFound />} />
             </Route>
           </Routes>
@@ -37,7 +33,3 @@ function App() {
 }
 
 export default App;
-
-// export const Home = React.lazy(() => import('../pages/home/Home'));
-// export const Reports = React.lazy(() => import('../pages/reports/Reports'));
-

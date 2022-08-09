@@ -3,21 +3,20 @@
 import React from 'react';
 import messages from '../../assets/local/messages';
 import "./Slider.scss"
-
 import cn from "classnames"
-const Slider = ({ items }: any) => {
+
+const Slider = ({ items }: { items: SliderInterface[] }) => {
 
   return (
     <>
       <div className="slideshow-container">
         {
-          items.map((item: SliderInterface, i: number) => {
-
+          items.map((item, i) =>
             <div key={i} className="mySlides fade">
               <img src={item.img_url} className="w-full" />
               <div className=" text-tiffany">{item.title}</div>
             </div>
-          })
+          )
         }
         <a className="prev" onClick={() => {
           console.log("test");

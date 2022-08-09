@@ -14,6 +14,7 @@ const Local =
     mostPopular: "Most Popular",
     mostWatching: "Most Watching",
     by: "by",
+    since: "منذ",
     registerInNewsLetter: "Register in News Letter",
     registerInNewsLetterSubtitle: "ةينورتكلإلا ةراجتلا ملاع يف ديدج لك نع ملعي نم لوأ نك و",
     actions: {
@@ -27,6 +28,14 @@ const Local =
     namePlaceholder: "Please enter your name",
     beFirstCommenter: "be the first commenter",
     langBtn: "ع",
+    pageNotFound: "Page Not found",
+    emptyState: "Opps! there is no data",
+    reports: {
+      "reportsAndStudies": "التقارير والدراسات"
+    },
+    essays: {
+      "essays": "Essays"
+    }
   }
 }
 

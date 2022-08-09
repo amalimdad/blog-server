@@ -2,7 +2,7 @@
 import React from 'react';
 import Slider from '../../components/slider/Slider';
 import ImageWithText from '../../components/shared/image-with-text/ImageWithText'
-import { SpliceThreeItems } from "../../utils/Utils"
+import { SpliceArrayInToFirstSub } from "../../utils/Utils"
 import CardDetails from '../../components/shared/card/CardDetails';
 import "./Home.scss"
 import MostReadingSection from './mostReadingSection/MostReadingSection';
@@ -52,12 +52,12 @@ export const Home = () => {
       author: "امل سليم"
     }
   ]
-  const subBlogs = SpliceThreeItems(blogs)
+  const subBlogs = SpliceArrayInToFirstSub(blogs, 3)
   const activeItem = blogs[0]
 
   return (
     <>
-      <Slider items={sliders} />
+      {/* <Slider items={sliders} /> */}
       {/* <div className="mx-auto flex flex-col space-y-10 md:space-y-20 px-10 md:px-20 lg:px-40"> */}
       <div className="mx-auto grid grid-cols-1 gap-12 space-y-20 px-10 md:px-20 lg:px-40">
 

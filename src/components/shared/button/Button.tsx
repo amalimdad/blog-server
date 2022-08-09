@@ -11,7 +11,7 @@ const Button = React.forwardRef(({ children, ...props }: any, ref: any) => {
     borderStyle,
     onClick,
     shape
-  } = props;
+  }: ButtonProps = props;
 
   return (
     <>
@@ -49,6 +49,7 @@ const Button = React.forwardRef(({ children, ...props }: any, ref: any) => {
 
             // shape
             'px-10 py-5': !shape,
+            'rounded': shape === 'rounded',
             'w-24 h-24 rounded-full': shape === 'full-sm',
             'w-32 h-32 rounded-full': shape === 'full-md'
           },
@@ -66,11 +67,9 @@ export default Button;
 interface ButtonProps {
   extraClasses: string,
   textColor: 'tiffany' | 'gray' | 'orang' | 'white',
-  bgColor: "transparent" | "black" | "tiffany" | "orang" | 'gray-light' | "gray-lighter",
+  bgColor: "transparent" | "black" | "white" | "tiffany" | "orang" | 'gray-light' | "gray-lighter",
   shape: "rounded" | "full-sm" | "full-md";
   borderColor: 'tiffany' | 'gray' | 'orang' | 'gray-light' | 'black',
   borderStyle: 'solid' | 'none',
-  href: string,
   onClick: () => void,
-  externalLink: string,
 }
