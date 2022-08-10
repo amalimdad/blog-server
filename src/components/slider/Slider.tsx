@@ -1,7 +1,6 @@
 
 
 import React, { createRef, useEffect, useState } from 'react';
-import messages from '../../assets/local/messages';
 import "./Slider.scss"
 import cn from "classnames"
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
