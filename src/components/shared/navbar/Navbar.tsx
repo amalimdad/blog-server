@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import messages from "../../../assets/local/messages"
 import cn from 'classnames';
 import { FaSistrix, FaRegMoon, FaBars } from 'react-icons/fa';

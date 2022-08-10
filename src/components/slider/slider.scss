@@ -1,3 +1,21 @@
-.slideshow-container {
-  @apply relative w-screen m-auto;
+.slider {
+  // @apply inline-flex overflow-x-hidden snap-x snap-mandatory relative max-w-full m-auto overflow-hidden;
+  @apply inline-flex overflow-x-hidden snap-x snap-mandatory overflow-hidden w-screen;
+}
+
+.overlay {
+  @apply absolute bg-gred01 h-full w-full inset-0 opacity-100;
+}
+
+.content-details {
+  @apply text-white text-xl top-1/2 opacity-100 px-12 left-1/2 transform;
+}
+
+.btn {
+  @apply absolute top-[40%];
+}
+
+.dot {
+  @apply cursor-pointer bg-white rounded-full inline-block px-0 py-2 w-9 h-9;
+  transition: background-color 0.6s ease;
 }

@@ -1,39 +1,14 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import messages from '../../../assets/local/messages';
 import logo from "../../../assets/images/logo.svg"
-
+import { REPORT } from '../../../utils/Constant';
 
 
 export const ViewReport = () => {
-  let report: Report = {
-    id: 1,
-    title: "whwpfrfrepovkepojvrepovj vckerpvekrpov",
-    image_url: 'https://yu.edu.sa/wp-content/uploads/2020/07/fin2.jpg',
-    created_at: '11/ 2/ 2033',
-    auther: { id: 2, name: "Amal Saleem" },
-    contents: [
-      {
-        id: 1,
-        headline: '',
-        description: " ..حيحصلا ناكملا يف تنأف تنرتنإلا ىلع تاجتنملا عيب ةيفيك ةفرعمو كلذ نم حبرلا قيقحت يف بغرت تنك اذإ ،رهش لك تنرتنإلا ربع ةمدخ وأ جتنم ءارش نع نآلا نييدوعسلا نم ٪64 غلّبيُ",
-        image_path: ''
-      },
-      {
-        id: 2,
-        headline: 'what is the usful of benijg',
-        description: " ..حيحصلا ناكملا يف تنأف تنرتنإلا ىلع تاجتنملا عيب ةيفيك ةفرعمو كلذ نم حبرلا قيقحت يف بغرت تنك اذإ ،رهش لك تنرتنإلا ربع ةمدخ وأ جتنم ءارش نع نآلا نييدوعسلا نم ٪64 غلّبيُ",
-        image_path: ''
-      },
-      {
-        id: 3,
-        headline: '؟تنرتنإلا ىلع هعيبتس يذلا ام',
-        description: " ..حيحصلا ناكملا يف تنأف تنرتنإلا ىلع تاجتنملا عيب ةيفيك ةفرعمو كلذ نم حبرلا قيقحت يف بغرت تنك اذإ ،رهش لك تنرتنإلا ربع ةمدخ وأ جتنم ءارش نع نآلا نييدوعسلا نم ٪64 غلّبيُ",
-        image_path: 'https://www.loyensloeff.com/contentassets/7ca5076ac555499c84ceedf4553233de/money-2.jpg?width=580&height=387'
-      }
-    ]
-  }
+  //  dummy data
+  let report: Report = REPORT
 
   const { id } = useParams();
   // call api of view report id
@@ -54,24 +29,26 @@ export const ViewReport = () => {
       <div className='mx-auto px-20 md:px-40 lg:px-80'>
         <img src={report.image_url} alt="" className='w-full my-20 md:my-40' />
         {
-          report.contents?.map((content, i) => <>
-            {
-              content?.headline && content?.headline.length > 0 ?
-                <p className="'text-black800 mb-7">
-                  <span className='text-tiffany me-3'>|</span>
-                  <span className="text-lg text-black900 "
-                  > {content.headline}
-                  </span>
-                </p>
-                : ''
-            }
-            {
-              content.image_path
-                ? <img src={content.image_path} alt="" className='w-full my-20 md:my-40' />
-                : ''
-            }
-            <p>{content.description}</p>
-          </>)
+          report.contents?.map((content, i) =>
+            <div key={i}>
+              {
+                content?.headline && content?.headline.length > 0 ?
+                  <p className="'text-black800 my-20 text-2xl">
+                    <span className='text-tiffany me-3'>|</span>
+                    <span className="text-black900 "
+                    > {content.headline}
+                    </span>
+                  </p>
+                  : ''
+              }
+              {
+                content.image_path
+                  ? <img src={content.image_path} alt="" className='w-full my-20 ' />
+                  : ''
+              }
+              <p className='text-black700'>{content.description}</p>
+            </div>
+          )
         }
       </div>
     </>
