@@ -18,6 +18,7 @@ const Button = React.forwardRef(({ children, ...props }: any, ref: any) => {
       <button
         onClick={onClick}
         ref={ref}
+        type="button"
         className={cn(
           'flex items-center justify-center',
           'inline-block text-center hover:shadow-popup transform transition-all duration-200 ',

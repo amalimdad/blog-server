@@ -18,8 +18,8 @@ const Essays = () => {
             <h3 className='text-center text-2xl md:text-3xl'> {messages.ar.essays.essays}</h3>
             <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  gap-20 my-20 md:my-40">
               {
-                essays.map((essay: CardDetailsInterface) =>
-                  <Card data={essay} isJustifyHight={true} callbackFunc={() => {
+                essays.map((essay: CardDetailsInterface, i) =>
+                  <Card data={essay} key={i} isJustifyHight={true} callbackFunc={() => {
                     navigate(`/reports/${essay.id}`, { replace: true });
                   }} />)
               }

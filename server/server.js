@@ -21,5 +21,5 @@ app.use('^$', (request, response, next) => {
 
 app.use(express.static((path.resolve(__dirname, '..', 'build'))))
 app.listen(PORT, () => {
-  console.log(`App lunched on ${PORT}`);
+  console.log(`App lunched on ${PORT}: http://localhost:8000`);
 })

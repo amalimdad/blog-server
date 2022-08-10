@@ -9,6 +9,7 @@ module.exports = {
       black: "#222222",
       black900: '#202221',
       black800: "#404343",
+      black700: "#606564",
       black600: "#808686",
       gray100: "#ECEEED",
       tiffany: "#5DD5C4",

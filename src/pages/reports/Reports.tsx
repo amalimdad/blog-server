@@ -56,8 +56,8 @@ export const Reports = () => {
         <h3 className='text-center text-2xl md:text-3xl'> {messages.ar.reports.reportsAndStudies}</h3>
         <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2  gap-20 my-20 md:my-40">
           {
-            blogs.map(report =>
-              <Card data={report} isJustifyHight={isJustifyHight} callbackFunc={() => {
+            blogs.map((report, i) =>
+              <Card data={report} isJustifyHight={isJustifyHight} key={i} callbackFunc={() => {
                 navigate(`/reports/${report.id}`, { replace: true });
                 console.log(report.id);
 

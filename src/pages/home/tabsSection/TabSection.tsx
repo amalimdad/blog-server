@@ -46,7 +46,7 @@ export const TabsSection = ({ data }: { data: CardDetailsInterface[] }) => {
         <div className='flex justify-between'>
           <div className='text-black600 space-x-20'>
             {tabItems.map((tab, i) => (
-              <button key={tab} onClick={() => onTabChanged(tab, i)}
+              <button key={i} onClick={() => onTabChanged(tab, i)}
                 className={cn(' me-10 md:me-20', { 'active': active === tab })}
               >
                 {tab}
