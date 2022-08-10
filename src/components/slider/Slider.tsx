@@ -71,15 +71,6 @@ const Slider = ({ items }: { items: SliderInterface[] }) => {
           </>
           ))}
           {carouselControl()}
-          {/* <!-- The dots/circles --> */}
-          <div className='content-details'>
-            {
-              items.map((item, index) =>
-                <span className='' onClick={() => { console.log(index + 1) }}></span>
-              )
-            }
-          </div>
-
         </div>
       </div>
     </>
@@ -87,8 +78,6 @@ const Slider = ({ items }: { items: SliderInterface[] }) => {
 };
 
 export default Slider;
-
-
 
 interface SliderInterface {
   img_url: string;
