@@ -27,7 +27,7 @@ export const Home = () => {
 
         <TabsSection data={blogs} />
 
-      </div >
+      </div>
 
     </>
   );
