@@ -12,7 +12,7 @@ const Essays = () => {
   const blogStore = useContext(blogStoreContext);
 
   let [essays, setEssays] = useState([])
-  let [isLoading, setIsLoading] = useState(blogStore.isLoading)
+  let [isLoading, setIsLoading] = useState(false)
 
   return (
     <>
