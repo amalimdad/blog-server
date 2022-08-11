@@ -34,7 +34,7 @@ const Slider = ({ items }: { items: SliderInterface[] }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      next();
+      // next();
     }, 3000);
     return () => clearInterval(interval);
   });
